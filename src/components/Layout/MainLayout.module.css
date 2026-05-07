@@ -1,0 +1,31 @@
+.layout {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  margin-top: var(--header-height);
+  padding: 24px;
+  min-height: calc(100vh - var(--header-height));
+  position: relative;
+  z-index: 1;
+}
+
+.scanLine {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.08), transparent);
+  z-index: 9999;
+  pointer-events: none;
+  animation: scanLine 8s linear infinite;
+}
+
+@keyframes scanLine {
+  0% { transform: translateY(-2px); }
+  100% { transform: translateY(100vh); }
+}

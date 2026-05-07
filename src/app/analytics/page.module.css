@@ -1,0 +1,165 @@
+.page { animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.pageHeader { margin-bottom: 24px; }
+.pageTitle { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+.pageDesc { font-size: 14px; color: var(--text-secondary); }
+
+.sectionHeader { margin-bottom: 16px; }
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.titleIcon { font-size: 18px; }
+
+/* Heatmap */
+.heatmapSection {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.heatmapGrid {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.heatCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 80px;
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heatBar {
+  width: 32px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heatFill {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  transition: height 1s ease;
+}
+
+.heatInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.heatName {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.heatVal {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.heatLegend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Charts */
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.chartFull {
+  grid-column: 1 / -1;
+  min-height: 260px;
+}
+
+.chartHalf {
+  min-height: 280px;
+}
+
+/* Performance */
+.perfSection {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.perfGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.perfCard {
+  padding: 16px;
+  background: rgba(15, 21, 40, 0.4);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.perfCard:hover {
+  background: rgba(15, 21, 40, 0.7);
+}
+
+.perfLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.perfValue {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.perfTrend {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-green);
+}
+
+@media (max-width: 900px) {
+  .chartsGrid { grid-template-columns: 1fr; }
+  .chartFull { grid-column: 1; }
+  .perfGrid { grid-template-columns: repeat(2, 1fr); }
+  .heatmapGrid { flex-wrap: wrap; }
+}

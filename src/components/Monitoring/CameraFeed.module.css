@@ -1,0 +1,65 @@
+.feed {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #000;
+  transition: border-color 0.3s;
+}
+
+.feed:hover {
+  border-color: var(--border-active);
+}
+
+.canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.location {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.detectionBanner {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 51, 102, 0.15);
+  border-top: 1px solid rgba(255, 51, 102, 0.3);
+  border-bottom: 1px solid rgba(255, 51, 102, 0.3);
+  color: #ff3366;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px;
+  font-family: var(--font-mono);
+  animation: blink 2s ease infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

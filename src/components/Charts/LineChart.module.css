@@ -1,0 +1,67 @@
+.container {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titleIcon { color: var(--accent-green); }
+
+.chart {
+  flex: 1;
+  padding: 12px;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+}
+
+.line {
+  animation: drawLine 1.5s ease forwards;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+.area {
+  animation: fadeIn 1s ease 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.dot {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  animation-delay: 1s;
+  transition: r 0.2s;
+}
+
+.dot:hover {
+  r: 5;
+}

@@ -1,0 +1,126 @@
+.container {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titleIcon { color: var(--accent-orange); }
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-orange);
+  background: var(--accent-orange-dim);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.feed {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.alertItem {
+  padding: 12px 14px;
+  border-left: 3px solid;
+  border-radius: var(--radius-md);
+  margin-bottom: 6px;
+  background: rgba(15, 21, 40, 0.4);
+  animation: fadeInUp 0.3s ease forwards;
+  opacity: 0;
+  transition: background 0.2s;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alertItem:hover {
+  background: rgba(15, 21, 40, 0.7);
+}
+
+.alertItem.latest {
+  background: rgba(255, 51, 102, 0.05);
+}
+
+.alertHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.severity {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+}
+
+.alertId {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.alertTime {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.alertBody {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.objType {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.location {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.alertFooter {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.resolved {
+  color: var(--accent-green);
+  margin-left: auto;
+}
