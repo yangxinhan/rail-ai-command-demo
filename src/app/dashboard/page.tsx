@@ -7,7 +7,7 @@ import DeviceStatus from '@/components/Dashboard/DeviceStatus';
 import DonutChart from '@/components/Charts/DonutChart';
 import BarChart from '@/components/Charts/BarChart';
 import { useSimulation } from '@/hooks/useSimulation';
-import { stations, devices, objectDistribution, hourlyDetections } from '@/data/mockData';
+import { devices, objectDistribution, hourlyDetections } from '@/data/mockData';
 import styles from './page.module.css';
 
 export default function DashboardPage() {
@@ -32,7 +32,7 @@ export default function DashboardPage() {
         <div className={styles.mainGrid}>
           {/* Map */}
           <div className={styles.mapArea}>
-            <TrainMap stations={stations} trains={trainList} />
+            <TrainMap trains={trainList} />
           </div>
 
           {/* Alert Feed */}

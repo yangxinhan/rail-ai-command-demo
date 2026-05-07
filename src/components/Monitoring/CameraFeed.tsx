@@ -29,6 +29,7 @@ export default function CameraFeed({ cameraId, label, location }: Props) {
 
     let animFrame: number;
     let tick = 0;
+    let localDetections: DetectionBox[] = [];
 
     const draw = () => {
       tick++;
@@ -125,11 +126,12 @@ export default function CameraFeed({ cameraId, label, location }: Props) {
             color: '#ff6b35',
           });
         }
+        localDetections = newDetections;
         setDetections(newDetections);
       }
 
       // Draw detection boxes
-      detections.forEach(det => {
+      localDetections.forEach(det => {
         // Box
         ctx.strokeStyle = det.color;
         ctx.lineWidth = 2;
@@ -183,7 +185,7 @@ export default function CameraFeed({ cameraId, label, location }: Props) {
 
     draw();
     return () => cancelAnimationFrame(animFrame);
-  }, [cameraId, detections]);
+  }, [cameraId]);
 
   return (
     <div className={styles.feed}>
